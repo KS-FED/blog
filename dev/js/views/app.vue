@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h2>技术分享 👌</h2>
         <router-view ></router-view>
     </div>
 </template>
