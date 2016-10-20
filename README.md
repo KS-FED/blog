@@ -3,4 +3,4 @@
 
 
 ## demo 
-https://ks-fed.github.io/build
+https://ks-fed.github.io/blog
