@@ -31,6 +31,37 @@ export default function (Vue,router){
                 }
             },
 
+            // 块级元素和行内元素区别
+            '/classifyone':{
+                name:'classifyone',
+                title:'块级元素和行内元素区别',
+                component: function(resolve){
+                    require(['./views/classify/classifyone.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // 块级元素和行内元素区别
+            '/classifytwo':{
+                name:'classifytwo',
+                title:'块级元素和行内元素区别',
+                component: function(resolve){
+                    require(['./views/classify/classifytwo.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // 块级元素和行内元素区别
+            '/classifythree':{
+                name:'classifythree',
+                title:'块级元素和行内元素区别',
+                component: function(resolve){
+                    require(['./views/classify/classifythree.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+
 
         }
     }
