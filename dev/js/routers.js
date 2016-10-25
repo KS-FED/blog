@@ -41,22 +41,12 @@ export default function (Vue,router){
                     })
                 }
             },
-            // 块级元素和行内元素区别
-            '/classifytwo':{
-                name:'classifytwo',
-                title:'块级元素和行内元素区别',
+            // 替换元素和非替换元素区别
+            '/classifyreplace':{
+                name:'classifyreplace',
+                title:'替换元素和非替换元素区别',
                 component: function(resolve){
-                    require(['./views/classify/classifytwo.vue'], (res)=> {
-                        resolve(res)
-                    })
-                }
-            },
-            // 块级元素和行内元素区别
-            '/classifythree':{
-                name:'classifythree',
-                title:'块级元素和行内元素区别',
-                component: function(resolve){
-                    require(['./views/classify/classifythree.vue'], (res)=> {
+                    require(['./views/classify/classifyreplace.vue'], (res)=> {
                         resolve(res)
                     })
                 }
