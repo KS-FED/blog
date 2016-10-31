@@ -11,9 +11,11 @@ Object.keys(components).forEach(k => {
     console.log(a)
 })
 
+window.Vue = Vue
+
 Vue.use(VueResource)
 Vue.use(VueRouter)
-proxy_mock(Vue)
+
 
 // *** 实例化VueRouter
 let router = new VueRouter({
@@ -29,18 +31,13 @@ router.start(app,'#app')
 
 
 
+// 调用后台接口，在此执行
+proxy_mock(Vue).then(()=>{
+    // XMLHttpRequest
+})
 
-var mount = Vue.prototype.$mount
 
 
-
-// Vue.http.get('./aaa', {})
-//     .then(res => {
-//         console.log('')
-//     })
-
-// console.log(Vue.http.post)
-
-require('./lib/index')
+import lib from './lib/index'
 
 
