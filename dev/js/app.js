@@ -7,8 +7,7 @@ import { proxy_mock } from './config/index'
 import components from './components/index'
 import routers from './routers'
 Object.keys(components).forEach(k => {
-    var a = Vue.component(k, components[k])
-    console.log(a)
+    Vue.component(k, components[k])
 })
 
 window.Vue = Vue
