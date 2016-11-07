@@ -51,6 +51,16 @@ export default function (Vue,router){
                     })
                 }
             },
+            // IOS8的坑
+            '/example1':{
+                name:'example1',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/example/example1.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
 
 
         }

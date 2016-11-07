@@ -2,7 +2,7 @@
       <div class="parameterl">
                
                 <div style="color:red">
-                    <p>1.替换元素是浏览器根据其标签的元素与属性来判断显示具体的内容。</p>
+                    <p>1.替换元素是浏览器根据其标签的元素与属性来判断显示具体的内容。典型的可替换元素有 "img"、 "object"、 "video" 和 表单元素，如"textarea"、 "input" 。 某些元素只在一些特殊情况下表现为可替换元素，例如 "audio"和 "canvas"</p>
                 </div>
                 <div style="color:red">
                     <p>1.1-----根据input标签的type属性来决定</p>

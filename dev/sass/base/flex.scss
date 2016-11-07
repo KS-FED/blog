@@ -1,0 +1,101 @@
+.row{
+	display:flex;
+	display:-webkit-flex;
+	display:box;
+	display:-webkit-box;
+	display:-moz-flex;
+	display:-ms-flexbox;
+}
+
+.col{
+	flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+}
+
+.flex-hc{
+	/* 09版 */
+	-webkit-box-pack: center;
+	/* 12版 */
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+	/* 其它取值如下：
+		align-items	 主轴原点方向对齐
+		flex-end		主轴延伸方向对齐
+		space-between   等间距排列，首尾不留白
+		space-around	等间距排列，首尾留白
+	 */
+}
+
+.flex-vc{
+	/* 09版 */
+	-webkit-box-align: center;
+	/* 12版 */
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+}
+
+
+.flex-ht{
+	/* 09版 */
+	-webkit-box-pack: start;
+	/* 12版 */
+	-webkit-justify-content: flex-start;
+	-moz-justify-content: flex-start;
+	-ms-justify-content: flex-start;
+	-o-justify-content: flex-start;
+	justify-content: flex-start;
+	/* 其它取值如下：
+		align-items	 主轴原点方向对齐
+		flex-end		主轴延伸方向对齐
+		space-between   等间距排列，首尾不留白
+		space-around	等间距排列，首尾留白
+	 */
+}
+
+.flex-vt{
+	/* 09版 */
+	-webkit-box-align: flex-start;
+	/* 12版 */
+	-webkit-align-items: flex-start;
+	-moz-align-items: flex-start;
+	-ms-align-items: flex-start;
+	-o-align-items: flex-start;
+	align-items: flex-start;
+}
+
+.flex-hb{
+	/* 09版 */
+	-webkit-box-pack: end;
+	/* 12版 */
+	-webkit-justify-content: flex-end;
+	-moz-justify-content: flex-end;
+	-ms-justify-content: flex-end;
+	-o-justify-content: flex-end;
+	justify-content: flex-end;
+	/* 其它取值如下：
+		align-items	 主轴原点方向对齐
+		flex-end		主轴延伸方向对齐
+		space-between   等间距排列，首尾不留白
+		space-around	等间距排列，首尾留白
+	 */
+}
+
+.flex-vb{
+	/* 09版 */
+	-webkit-box-align: flex-end;
+	/* 12版 */
+	-webkit-align-items: flex-end;
+	-moz-align-items: flex-end;
+	-ms-align-items: flex-end;
+	-o-align-items: flex-end;
+	align-items: flex-end;
+}
