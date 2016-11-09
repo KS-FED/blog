@@ -1,7 +1,7 @@
 <template>
 <div>
    <div class="parameterl">
-   				<div style="color:red">
+   				<div class="explaininfo">
                     <p>1.display:-webkit-box属性加的情况下，IOS8以上和以下显示一样</p>
                     <p>1.1---如果是块块的话，对应比例正常显示</p>
                     <p>1.2---如果是块内或者内快的话，内联元素对应显示自己本身，块级元素沾满剩余空间</p>
@@ -62,7 +62,7 @@
                     </div>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </div>
-                <div style="color:red">
+                <div class="explaininfo">
                     <p>2.display:-webkit-box属性不加的情况下，IOS8以上和以下显示不一样</p>
                     <p>2.1---IOS8以上所有内联都会转化成块状并且正常显示</p>
                     <p>2.2---IOS8以下所有块状都会转化成内联显示自己本身</p>

@@ -4,7 +4,7 @@
      
             <div class="parameterl">
                
-                <div style="color:red">
+                <div class="explaininfo">
                     <p>1.块级元素可以设置 width, height属性</p>
                 </div>
                 <div class="divwh">
@@ -15,7 +15,7 @@
    <div class="divwh">
         <span>aaa</span>
     </div>
-    <div style="color:red">
+    <div class="explaininfo">
         <p>1.块级元素可以设置 width, height属性</p>
     </div>
 </code>
@@ -30,7 +30,7 @@
 </pre>
 
                
-                <div style="color:red">
+                <div class="explaininfo">
                     <p>2.行内元素设置width,  height无效</p>
                 </div>
                  <span class="spanwh">
@@ -41,7 +41,7 @@
     <span class="spanwh">
         ccc
     </span>
-    <div style="color:red">
+    <div class="explaininfo">
         <p>2.行内元素设置width,  height无效</p>
     </div>
 </code>
@@ -73,7 +73,7 @@
 
              <div class="parameterl">
                
-                <div style="color:red">
+                <div class="explaininfo">
                     <p>3.块级元素即使设置了宽度，仍然是独占一行的</p>
                 </div>
                  <div class="divwh">
@@ -103,7 +103,7 @@
 </pre>
 
 
-                <div style="color:red">
+                <div class="explaininfo">
                     <p>4.行内元素不会独占一行，相邻的行内元素会排列在同一行里，
                     知道一行排不下，才会换行，其宽度随元素的内容而变化</p>
                 </div> 
@@ -158,7 +158,7 @@
 
 
              <div class="parameterl">
-                <div style="color:red">
+                <div class="explaininfo">
                     <p>5.块级元素可以设置margin 和 padding. </p>
                 </div>
                  <div class="divmp">
@@ -183,7 +183,7 @@
 </pre>
 
 
-                    <div style="color:red">
+                    <div class="explaininfo">
                         <p>6.行内元素的水平方向的padding-left,padding-right,margin-left,margin-right 都产生边距效果</p>
                         <p>但是竖直方向的margin-top,margin-bottom都不会产生边距效果</p>
                         <p>但是竖直方向的padding-top,padding-bottom有效,不过不沾页面空间</p>

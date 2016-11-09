@@ -1,11 +1,10 @@
 <template>
 <div>
    <div class="parameterl">
-   				<div style="color:red">
+   				<div class="explaininfo">
                     <p>1.table本身不加样式</p>
                 </div>
                 <div class="">
-					<p>最原始的table</p>
 					<!-- 有 -->
 				    <table>
                         <thead>
@@ -51,11 +50,60 @@
 				</div>
 
                 <br><br><br><br><br><br><br>
-                <div style="color:red">
-                    <p>1.table加width：100%样式</p>
+                <div class="explaininfo">
+                    <p>2.table加width：100%样式</p>
                 </div>
                 <div class="tablewhole">
-                    <p>最原始的table</p>
+                    <!-- 有 -->
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>现金红包类型</th>
+                              <th>活动名称</th>
+                              <th>活动ID</th>
+                              <th>活动日期 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                <td>消费返现</td>
+                                <td>add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                              
+
+                        
+                        </tbody>
+
+                      </table>
+                    <br/><br/>
+                </div>
+                
+
+                <br><br><br><br><br><br><br>
+                <div class="explaininfo">
+                    <p>3.table加width：100%样式和不换行样式</p>
+                </div>
+                <div class="tablenowrap">
                     <!-- 有 -->
                     <table>
                         <thead>
@@ -100,6 +148,108 @@
                     <br/><br/>
                 </div>
 
+
+                <br><br><br><br><br><br><br>
+                <div class="explaininfo">
+                    <p>4.table加width：100%样式和换行样式</p>
+                </div>
+                <div class="tablewrap">
+                    <!-- 有 -->
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>现金红包类型</th>
+                              <th>活动名称</th>
+                              <th>活动ID</th>
+                              <th>活动日期 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                <td>消费返现</td>
+                                <td>add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                              
+
+                        
+                        </tbody>
+
+                      </table>
+                    <br/><br/>
+                </div>
+
+
+
+                <br><br><br><br><br><br><br>
+                <div class="explaininfo">
+                    <p>5.table加width：100%样式和不换行样式,内部某列换行</p>
+                </div>
+                <div class="tablenowrap">
+                    <!-- 有 -->
+                    <p class="explaininfo">5.1给需要换行的td加个样式</p>
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>现金红包类型</th>
+                              <th>活动名称</th>
+                              <th>活动ID</th>
+                              <th>活动日期 </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tdnowrap">
+                              <tr>
+                                <td>消费返现</td>
+                                <td>add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                               <tr>
+                                <td>消费返现</td>
+                                <td>add2</td>
+                                <td>1877531127875584</td>
+                                <td>2016-10-28 至 2016-10-31</td>
+                              </tr>
+                              
+
+                        
+                        </tbody>
+
+                      </table>
+                    <br/><br/>
+                </div>
+              
               
 				
 			
@@ -109,10 +259,31 @@
 
 
 </template>
-<style>
+<style style="sass">
 .tablewhole table{
     width:100%;
 }
+.tablenowrap table{
+    width:100%;
+    white-space: nowrap;
+   
+}
+.tablenowrap table .tdnowrap td:nth-child(2){
+        white-space:normal;
+        word-wrap:break-word;
+        word-break:normal; 
+        word-break:break-all; 
+}
+
+
+ .tablewrap table{
+    width:100%;
+ }
+ .tablewrap table td{
+        word-wrap:break-word;
+        word-break:normal; 
+        word-break:break-all; 
+    }
  table th {
     border-bottom: 1px solid #999;
     border-top: 1px solid #e9e9e9;
