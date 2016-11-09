@@ -61,6 +61,16 @@ export default function (Vue,router){
                     })
                 }
             },
+             // table比较
+            '/tablecompare':{
+                name:'tablecompare',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/table/tablecompare.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
 
 
         }
