@@ -249,17 +249,59 @@
                       </table>
                     <br/><br/>
                 </div>
+
+
+
+
+                <br><br><br><br><br><br><br>
+                <div class="explaininfo">
+                    <p>不换行样式---所有主流浏览器都支持 white-space 属性。主流浏览器包括（IE,火狐,谷歌,safari,opera）</p>
+                </div>
+<pre>
+ <code class="scss">
+     .tablenowrap table{
+        width:100%;
+        white-space: nowrap;
+       
+    }
+
+</code>
+</pre>
+
+
+
+
+                <br><br><br><br><br><br><br>
+                <div class="explaininfo">
+                    <p>换行样式---所有主流浏览器都支持 word-break,word-wrap  属性。主流浏览器包括（IE,火狐,谷歌,safari,opera）</p>
+                </div>
+<pre>
+ <code class="scss">
+      .tablewrap table td{
+        word-wrap:break-word;
+        word-break:normal; 
+        word-break:break-all; 
+    }
+
+</code>
+</pre>
+
+
+
+
               
               
 				
 			
    </div>
 
+
 </div>
 
 
 </template>
 <style style="sass">
+
 .tablewhole table{
     width:100%;
 }
