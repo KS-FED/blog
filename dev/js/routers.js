@@ -71,6 +71,17 @@ export default function (Vue,router){
                     })
                 }
             },
+             // position定位
+            '/position':{
+                name:'position',
+                title:'position定位',
+                component: function(resolve){
+                    require(['./views/position/position.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+
 
 
         }
