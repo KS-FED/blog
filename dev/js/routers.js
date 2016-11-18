@@ -61,6 +61,26 @@ export default function (Vue,router){
                     })
                 }
             },
+            // IOS8的坑
+            '/example2':{
+                name:'example2',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/example/example2.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // IOS8的坑
+            '/example3':{
+                name:'example3',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/example/example3.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
              // table比较
             '/tablecompare':{
                 name:'tablecompare',
