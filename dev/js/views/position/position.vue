@@ -68,7 +68,7 @@
 				<div class="explaininfo">
                     <p>6.position==absolute本身加top,left,right,bottom,父级加relative</p>
                     <p>6.1---脱离文档留,相对于父元素进行定位</p>
-                    <p>5.2---相对于最近的非 static 定位祖先元素的偏移,但是没有加top,left,right,bottom,所以脱离文档留,在元素里</p>
+                    <p>6.2---相对于最近的非 static 定位祖先元素的偏移,但是没有加top,left,right,bottom,所以脱离文档留,在元素里</p>
                 </div>
 				<div class="pr">
 				  <div class="pos_abs f40">这是带有绝对定位的标题6
