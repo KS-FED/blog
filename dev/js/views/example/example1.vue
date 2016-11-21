@@ -481,7 +481,7 @@
 
 
 
-        <p class="lh30 mt-20">5.3 用table-row和table-cell和vertical-align实现居中布局如下:</p>
+        <p class="lh30 mt-20">5.3 用table-row和table-cell和vertical-align实现居中布局和1：1如下:</p>
         <div class="displaytable bor-red mb-20">
             <div class="displayrow">
                 <div class="displaycol bgblue h50">
@@ -493,27 +493,6 @@
                
             </div>
         </div>
-        <div class="displaytable bor-red mb-20">
-            <div class="displayrow">
-                <div class="displaycol w-150 bgblue h50">
-                    单元格1(固定宽度)
-                </div>
-                <div class="displaycol bggreen h50">
-                    单元格2
-                </div>
-            </div>
-        </div>
-        <div class="displaytable bor-red">
-            <div class="displayrow">
-                <div class="displaycol-auto  bgblue h50">
-                    单元格1(没有宽度)
-                </div>
-                <div class="displaycol bggreen h50">
-                    单元格2
-                </div>
-            </div>
-        </div>
-
         <pre>
             <code class="html">
         <div class="displaytable bor-red mb-20">
@@ -527,6 +506,12 @@
                
             </div>
         </div>
+            </code>
+            
+        </pre>
+
+
+        <p class="lh30 mt-20">5.4 用table-row和table-cell和vertical-align实现居中布局和固定宽度如下:</p>
         <div class="displaytable bor-red mb-20">
             <div class="displayrow">
                 <div class="displaycol w-150 bgblue h50">
@@ -537,6 +522,37 @@
                 </div>
             </div>
         </div>
+        <pre>
+            <code class="html">
+        <div class="displaytable bor-red mb-20">
+            <div class="displayrow">
+                <div class="displaycol w-150 bgblue h50">
+                    单元格1(固定宽度)
+                </div>
+                <div class="displaycol bggreen h50">
+                    单元格2
+                </div>
+            </div>
+        </div>
+            </code>
+        </pre>
+
+
+
+
+        <p class="lh30 mt-20">5.5 用table-row和table-cell和vertical-align实现居中布局和没有宽度如下:</p>
+        <div class="displaytable bor-red">
+            <div class="displayrow">
+                <div class="displaycol-auto  bgblue h50">
+                    单元格1(没有宽度)
+                </div>
+                <div class="displaycol bggreen h50">
+                    单元格2
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="html">
         <div class="displaytable bor-red">
             <div class="displayrow">
                 <div class="displaycol-auto  bgblue h50">
@@ -548,6 +564,11 @@
             </div>
         </div>
             </code>
+        </pre>
+
+
+
+        <pre>
             <code class="css">
         .displayrow{
             display: table-row;
