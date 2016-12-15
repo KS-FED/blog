@@ -1,0 +1,22 @@
+%parameter{
+	display:block;
+	//overflow-x:auto;
+	padding:0.5em;
+	color:#383a42;
+	background:#fafafa;
+	margin:0 auto;
+	.bor-right{border-right:1px solid #bbb;padding:0px 10px;width:50px;display:inline-block }
+	.bor-left{padding: 0px 10px;display:inline-block }
+	
+}
+
+
+.parameterl{
+	@extend %parameter;
+	padding-left:120px;
+	
+}
+.parameter{
+	@extend %parameter;
+	&>div{margin: auto 100px;height:30px;line-height:30px} 
+}

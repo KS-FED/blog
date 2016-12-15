@@ -31,6 +31,78 @@ export default function (Vue,router){
                 }
             },
 
+            // 块级元素和行内元素区别
+            '/classifyone':{
+                name:'classifyone',
+                title:'块级元素和行内元素区别',
+                component: function(resolve){
+                    require(['./views/classify/classifyone.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // 替换元素和非替换元素区别
+            '/classifyreplace':{
+                name:'classifyreplace',
+                title:'替换元素和非替换元素区别',
+                component: function(resolve){
+                    require(['./views/classify/classifyreplace.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // IOS8的坑
+            '/example1':{
+                name:'example1',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/example/example1.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // IOS8的坑
+            '/example2':{
+                name:'example2',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/example/example2.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+            // IOS8的坑
+            '/example3':{
+                name:'example3',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/example/example3.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+             // table比较
+            '/tablecompare':{
+                name:'tablecompare',
+                title:'IOS8的坑',
+                component: function(resolve){
+                    require(['./views/table/tablecompare.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+             // position定位
+            '/position':{
+                name:'position',
+                title:'position定位',
+                component: function(resolve){
+                    require(['./views/position/position.vue'], (res)=> {
+                        resolve(res)
+                    })
+                }
+            },
+
+
 
         }
     }

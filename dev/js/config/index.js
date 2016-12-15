@@ -5,11 +5,17 @@
 export function proxy_mock (Vue) {
     console.log('environment: ' + APP_ENV, 'version: ' + APP_VERSION)
     Vue.config.debug = false
-    if (APP_ENV === 'dev') {
-        require(['./proxy-mock'], function ({
-            proxy_mock_core
-        }) {
-            proxy_mock_core(Vue)
-        })
-    }
+
+    return new Promise(function(resolve,reject){
+        if (APP_ENV === 'dev') {
+            require(['./proxy-mock'], function ({ proxy_mock_core }) {
+                proxy_mock_core(Vue)
+                resolve()
+            })
+        }else{
+            resolve()
+        }    
+    })
+
+    
 }
