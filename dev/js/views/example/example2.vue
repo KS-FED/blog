@@ -118,6 +118,38 @@
 
 
 
+   <div class="param">
+        <div class="questioninfo f15  mb-10">
+            <p class="hlh40">问题2:display:flex和display:box有什么区别？</p>
+
+        </div>
+
+        <div class="bor-top">
+            <p class="lh30 mt-10"> 前者是flex 2012年的语法，也将是以后标准的语法，大部分浏览器已经实现了无前缀版本。</p>
+            <p class="lh30 mt-10">   后者是2009年的语法，已经过时，是需要加上对应前缀的。</p>
+
+            <p class="lh30 mt-20">所以兼容性的代码，大致如下:</p>
+             <div class="highlight">
+                <pre>
+    <code class="language-css">
+    <span class="nt">display</span><span class="o">:</span><span class="nt">-webkit-box</span> <span class="o">;</span><span class="c">/* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */</span>
+
+    <span class="nt">display</span><span class="o">:</span><span class="nt">-moz-box</span><span class="o">;</span><span class="c">/* Firefox 17- */</span>
+
+    <span class="nt">display</span><span class="o">:</span><span class="nt">-webkit-flex</span><span class="o">;</span><span class="c">/* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */</span>
+
+    <span class="nt">display</span><span class="o">:</span><span class="nt">-moz-flex</span><span class="o">;</span><span class="c">/* Firefox 18+ */</span>
+
+    <span class="nt">display</span><span class="o">:</span><span class="nt">-ms-flexbox</span><span class="o">;</span><span class="c">/* IE 10 */</span>
+
+    <span class="nt">display</span><span class="o">:</span><span class="nt">flex</span><span class="o">;</span><span class="c">/* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */</span>
+    </code>
+                </pre>
+            </div>
+        </div>
+   </div>
+
+
 
 </template>
 <style>
