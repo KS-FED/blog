@@ -1,93 +1,132 @@
 /**
- * webpack 配置
+ * @description webpack 配置
+ * @author zdzDesigner
  */
-
-var path = require('path')
-var webpack = require('webpack')
+var webpack = require('webpack');
 var CleanWebpackPlugin = require('clean-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-var _package = require('./package.json')
-
-console.log(process.env.NODE_ENV)
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var hljs = require('highlight.js');
 
 module.exports = {
-    entry: {
-        app: __dirname + '/dev/js/app.js',
-        vuecore: __dirname + '/dev/js/vuecore.js'
-    },
-    output: {
-        path: __dirname + '/dist',
-        filename:'[name].js',
-        chunkFilename: '[name].[chunkhash:8].js',
-        publicPath: './dist/'
-    },
-    module: {
-        preLoaders: [
-            // {test: /\.vue$/, loader: "eslint", exclude: /node_modules/},
-            // {test: /\.js$/, loader: "eslint", exclude: /node_modules/}
-        ],
-        loaders: [
-            {   test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css!sass-loader-once')}, 
-            {   test: /\.(tpl|html)$/,
-                loader: 'html'}, 
-            {   test: /\.vue$/,
-                loader: 'vue',}, 
-            {   test: /\.js$/,
-                exclude: /(.\.min\.js)|node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
-                loader: 'babel'},
+  entry: {
+    app: __dirname + '/src/doc/main.js',
+    vuecore: __dirname + '/src/doc/vuecore.js'
+  },
 
-            // {test: /\.(js|tag)$/, exclude: /node_modules/, loader: 'babel-loader'},
-            {   test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192'}, 
-            {   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader-path?limit=8192&name=[name].[ext]?[hash:8]&path=../[name].[ext]?[hash:8]'},
-            {   test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader-path?limit=8192&name=[name].[ext]?[hash:8]&path=../[name].[ext]?[hash:8]'},
-            {   test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader-path?limit=8192&name=[name].[ext]?[hash:8]&path=../[name].[ext]?[hash:8]'}, 
-            
-            {   test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-                loader: 'file-loader-path?limit=8192&name=[name].[ext]?[hash:8]&path=../[name].[ext]?[hash:8]'},
-            {   test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader-path?limit=8192&name=[name].[ext]?[hash:8]&path=../[name].[ext]?[hash:8]'}
-        ]
+  output: {
+    path: __dirname + '/dist',
+    filename: '[name].js',
+    chunkFilename: '[name].[chunkhash:8].js',
+    publicPath: '/dist/'
+  },
+
+  module: {
+    loaders: [{
+      test: /\.md$/,
+      loader: 'vue-markdown-loader'
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('css-loader!ks-autobem-loader?type=css!sass-loader')
+    }, {
+      test: /\.(tpl|html)$/,
+      loader: 'html'
+    }, {
+      test: /\.vue$/,
+      loader: 'vue',
+    }, {
+      test: /\.js$/,
+      // excluding some local linked packages.
+      // for normal use cases only node_modules is needed.
+      exclude: /(.\.min\.js)|node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+      loader: 'babel'
+    }, {
+      test: /\.(png|jpg)$/,
+      loader: 'url-loader?limit=8192'
+    }, {
+      test: /\.(svg|woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file-loader-path?limit=8192&name=[name].[ext]?[hash:8]&path=./[name].[ext]?[hash:8]'
+    }]
+  },
+
+  vueMarkdown: {
+    // markdown-it config
+    preset: 'default',
+    breaks: true,
+
+    highlight: function(str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return '<pre class="ks-hljs"><code>' +
+            hljs.highlight(lang, str, true).value +
+            '</code></pre>';
+        } catch (__) {}
+      }
+
+      return '<pre class="ks-hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     },
-    babel: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
+
+    preprocess: function(MarkdownIt, Source) {
+      // code inline
+      MarkdownIt.renderer.rules.code_inline = function(tokens, idx, options, env, slf) {
+        var token = tokens[idx];
+
+        return '<code class="ks-code-inline"' + slf.renderAttrs(token) + '>' +
+          tokens[idx].content +
+          '</code>';
+      };
+
+      // 表格样式替换
+      MarkdownIt.renderer.rules.table_open = function() {
+        return '<div class="table-striped"><table class="table-entity">';
+      };
+      MarkdownIt.renderer.rules.table_close = function() {
+        return '</table></div>';
+      };
+
+      return Source;
     },
-    eslint: {
-        configFile: __dirname+'/.eslintrc',
-        formatter: require('eslint-friendly-formatter')
-    },
-    plugins: [
-        new ExtractTextPlugin('app.css'),
-        new CleanWebpackPlugin(['dist'], {
-            root: __dirname,
-            verbose: true,
-            dry: false
-        }),
-        new webpack.DefinePlugin({
-            'APP_ENV': JSON.stringify(process.env.NODE_ENV),
-            'APP_VERSION':JSON.stringify(_package.version)
-        }),
-        new webpack.ProvidePlugin({
-            'Vue':'vue',
-            'VueResource':'vue-resource'
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-          name:'vuecore',
-          filename:'vuecore.js'
-        })
-        
-    ],
-    resolve: {
-        // extensions: ['', '.js', '.vue'],
-        alias: {
-            scss: path.join(__dirname, './dev/sass/app.scss')
-        }
-    },
-    devtool: process.env.NODE_ENV != 'pro' && 'source-map'
-}
+
+    use: [
+      /* markdown-it plugin */
+      // require('markdown-it-xxx'),
+
+      /* or */
+      // [require('markdown-it-xxx'), 'this is options']
+    ]
+  },
+
+  vue: {
+    loaders: {
+      scss: 'vue-style-loader!ks-autobem-loader?type=css!sass-loader',
+      html: 'vue-html-loader!ks-autobem-loader?type=html',
+      markdown: 'vue-markdown-loader'
+    }
+  },
+  babel: {
+    presets: ['es2015', 'stage-0'],
+    plugins: ['transform-runtime']
+  },
+  plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      root: __dirname,
+      verbose: true,
+      dry: false
+    }),
+    new webpack.ProvidePlugin({
+      'Vue': 'vue',
+      'Vuex': 'vuex',
+      'VueResource': 'vue-resource',
+      'VueRouter': 'vue-router',
+      'VueValidator': 'vue-validator'
+    }),
+
+    // new webpack.optimize.UglifyJsPlugin({
+    //     compress: {
+    //         warnings: false
+    //     }
+    // }),
+    new ExtractTextPlugin('app.css'),
+    new webpack.optimize.DedupePlugin()
+  ]
+
+};
