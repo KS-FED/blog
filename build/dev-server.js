@@ -32,8 +32,8 @@ var mixinWebpackConfig = merge.smart(webpackConfig, {
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vueCore',
-            filename: 'vueCore.js'
+            name: 'vuecore',
+            filename: 'vuecore.js'
         }),
         // new webpack.ProgressPlugin(function (percentage, msg) {
         //   console.log('进度：' + Math.round(percentage * 100) + '% ---> ' + msg)

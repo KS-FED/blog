@@ -7,7 +7,6 @@
   "scripts": {
     "develop": "node build/dev-server.js",
     "pro": "node build/pro.js",
-    "components": "node build/components.js",
     "build": "webpack --watch"
   },
   "dependencies": {
